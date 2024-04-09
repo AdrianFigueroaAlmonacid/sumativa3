@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script defer src="{% static 'core/js/main.js' %}"></script>
+    <title>Cinetopia - Cine cultura y entretencion</title>
+</head>
+
+<body>
+
+    <!-- NAV BAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark  bg-primary">
+        <div class="container-fluid   ">
+            <a class="navbar-brand" href="#"> <span class="logo-cinetopia">Cinetopia</span> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse  container-landing" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{%url 'index'%}"> <span
+                                class="text-nav">Inicio</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'estreno'%}"> <span class="text-nav">Proximos estrenos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'entrevistas'%}"> <span class="text-nav">Entrevistas</span> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'streaming'%}"> <span class="text-nav">Streaming</span> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'series'%}"> <span class="text-nav">Series</span> </a>
+                    </li>
+                    <li>
+
+
+                    </li>
+                </ul>
+
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Inicio de sesión
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV BAR -->
+
+
+    <!-- MODAL LOGIN -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Inicia sesión</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <section class="container-login">
+                        <div class="mb-3 row">
+                            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail"
+                                    value="email@example.com">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPassword">
+                            </div>
+                        </div>
+
+
+                    </section>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class=" boton-menu btn btn-warning"> <a class="nav-link"
+                            href="./recuperar-pass.html">Recuperar
+                            contraseña</a> </button>
+                    <button type="button" class=" boton-menu btn btn-info"> <a class="nav-link"
+                            href="{%url 'registro'%}">Registrarse</a>
+                    </button>
+                    <button type="button" class="btn btn-success">Ingresar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL LOGIN -->
+
+    <div class="title-home">
+        <h1>Lo mejor del cine y el espectáculo</h1>
+    </div>
+
+
+    <!-- NOTICIAS -->
+    <section class="news-cinetopia container-landing">
+        <h2>Últimas noticias del cine</h2>
+
+        <div class=" card-news card mb-3">
+            <a href="{%url 'noticia1'%}">
+                <div class="row g-0">
+                    <div class="col-md-3">
+
+                        <img src="{% static 'core/img/noticia1.jpeg' %}" class="img-fluid">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body  text-start">
+                            <h5 class="card-title">Si quieres encontrar un tesoro, no mires ahí". <br> Nicolas Cage
+                                culpa a
+                                Disney
+                                de que
+                                su saga de películas más popular no
+                                tenga tercera entrega</h5>
+                            <p class="card-text">Teniendo en cuenta que han pasado 17 años desde el estreno de la
+                                anterior
+                                entrega,
+                                tampoco es una sorpresa tan grande</p>
+                            <p class="card-text"><small class="text-muted">Leer más</small></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+        <div class="card card-news mb-3">
+            <a href="{%url 'noticia2'%}">
+                <div class="row g-0">
+                    <div class="col-md-3">
+                        <img src="{% static 'core/img/noticia2.jpeg' %}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body  text-start">
+                            <h5 class="card-title">El manga de 'One Piece' se detiene. Eiichiro Oda se toma un descanso
+                                de varias semanas, pero no necesariamente por un
+                                mal motivo
+                            </h5>
+                            <p class="card-text">A recargar pilas, y seguimos en Egghead
+                            </p>
+                            <p class="card-text"><small class="text-muted">Leer más</small></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="card card-news  mb-3">
+            <a href="{%url 'noticia3'%}">
+                <div class="row g-0">
+                    <div class="col-md-3">
+                        <img src="{% static 'core/img/noticia3.jpeg' %}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body  text-start">
+                            <h5 class="card-title">30 años después del histórico crossover de Star Trek, William Shatner
+                                confiesa su gran arrepentimiento con esta crucial
+                                escena. "No entendían lo que hacía"
+                            </h5>
+                            <p class="card-text">En 1994 'Star Trek: Generations' juntó a las dos tripulaciones más
+                                queridas
+                                de la Enterprise: la de Kirk y la de Picard
+                            </p>
+                            <p class="card-text"><small class="text-muted">Leer más</small></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+    <!-- NOTICIAS -->
+
+    <!-- ENTREVISTAS -->
+    <section class="interviews-cinetopia container-landing">
+
+        <h2>Entrevistas</h2>
+        <div class="card-group gap-3">
+
+            <div class="card card-interview">
+                <a href="{%url 'entrevista1'%}">
+                    <img src="{% static 'core/img/entrevista1.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Entrevista a los actores de <br> Sociedad de la Nieve</h5>
+                        <p class="card-text"> “Muchas veces se dice que los sobrevivientes son los héroes, pero los
+                            héroes también son aquellos que no volvieron, los que dieron su vida por los sobrevivientes”
+                            - Juan Caruso</p>
+                        <p class="card-text"><small class="text-muted">Leer más</small></p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card card-interview">
+                <a href="{%url 'entrevista2'%}">
+                    <img src="{% static 'core/img/entrevista2.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"> Dakota Johnson habla sobre el fracaso de Madame Web 'no lo volveré a
+                            hacer' </h5>
+                        <p class="card-text"> En entrevista para Vanity Fair, la actriz se refirió a la película que ya
+                            es considerada el mayor fiasco de las películas de comics, pues ha recaudado solo 40
+                            millones de dólares en Estados Unidos en tres fines de semana. </p>
+                        <p class="card-text"><small class="text-muted">Leer más</small></p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card card-interview">
+                <a href="{%url 'entrevista3'%}">
+                    <img src="{% static 'core/img/entrevista3.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"> Guionista de “Baby Bandito”: “Me parece zafado creer que la ficción
+                            tiene algo de responsabilidad” </h5>
+                        <p class="card-text">Diego Muñoz: Sobre el proceso creativo de "Baby Bandito", inspirada en el
+                            roblo del siglo del 2014, dijo que "fue un trabajo muy arduo que tuvo harto de adaptación.
+                        </p>
+                        </p>
+                        <p class="card-text"><small class="text-muted">Leer más</small></p>
+                    </div>
+            </div>
+            </a>
+        </div>
+
+    </section>
+    <!-- ENTREVISTAS -->
+
+
+
+    <!-- PIE DE PAGINA-->
+    <footer>
+
+        <h4> ¿Más sobre cine? </h4>
+        <p> No te pierdas nada y siguenos en nuestras redes ;) </p>
+        <div class="footer-content">
+            <div class="iconos-redes">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <p> </p>
+        <p>&copy; 2024 Cinetopia. Todos los derechos reservados.</p>
+
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script defer src="{% static 'core/js/main.js' %}"></script>
+    <title>Cinetopia - Próximos Estrenos</title>
+</head>
+
+<body>
+
+    <!-- NAV BAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark  bg-primary">
+        <div class="container-fluid   ">
+            <a class="navbar-brand" href="#"> <span class="logo-cinetopia">Cinetopia</span> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse  container-landing" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{%url 'index'%}"> <span
+                                class="text-nav">Inicio</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./estreno.html"> <span class="text-nav">Proximos estrenos</span> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./entrevistas.html"> <span class="text-nav">Entrevistas</span> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./streaming.html"> <span class="text-nav">Streaming</span> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./series.html"> <span class="text-nav">Series</span> </a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Escribe tu busqueda"
+                        aria-label="Search">
+                    <button class="btn  btn-success" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV BAR -->
+
+    <div class="title-home">
+        <h1>¡Mantente al tanto de todo! <br> Aquí te mostramos los próximos estrenos del 2024</h1>
+
+    </div>
+
+    <!-- CONTENIDO ESTRENOS -->
+
+    <section class="container-landing">
+
+        <div class=" card-news card mb-3">
+            <a href="{%url 'estreno1'%}">
+
+                <div class="row g-0">
+                    <div class="col-md-3">
+                        <img src="{% static 'core/img/estreno1.jpg' %}" class="img-fluid rounded-start" alt="...">
+
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body  text-start">
+                            <h5 class="card-title"> Godzilla y Kong: el nuevo imperio. Se estrenará en cines el 29 de
+                                marzo de 2024. </h5>
+                            <p class="card-text">La película es una secuela de "Godzilla vs. Kong" (2021). En esta nueva
+                                aventura, los titanes se unirán para enfrentar una amenaza que podría destruirlos a
+                                ellos y a la humanidad.</h5>
+                            <p class="card-text"><small class="text-muted">Leer más</small></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+        <div class="card card-news mb-3">
+            <a href="{%url 'estreno2'%}">
+                <div class="row g-0">
+                    <div class="col-md-3">
+                        <img src="{% static 'core/img/estreno2.jpg' %}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body  text-start">
+                            <h5 class="card-title"> Ghostbusters: apocalipsis fantasma. La podrás ver en las carteleras
+                                del país el próximo 11 de abril.
+                            </h5>
+                            <p class="card-text"> La familia Spengler regresa a la famosa estación de bomberos de la
+                                ciudad de Nueva York con los cazafantasmas originales. Cuando un antiguo artefacto
+                                desata una fuerza maligna...
+                            </p>
+                            <p class="card-text"><small class="text-muted">Leer más</small></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="card card-news  mb-3">
+            <a href="{%url 'estreno3'%}">
+                <div class="row g-0">
+                    <div class="col-md-3">
+                        <img src=" {% static 'core/img/estreno3.jpeg' %}" class="img-fluid rounded-start" alt="...">
+
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body  text-start">
+                            <h5 class="card-title"> El planeta de los simios: nuevo reino es una película de ciencia
+                                ficción que se estrenará el 9 de mayo de 2024 en América Latina.
+                            </h5>
+                            <p class="card-text"> La película está ambientada 300 años después de la colonización del
+                                oasis por parte de los primates. La historia explora temas de poder y supervivencia en
+                                una sociedad cambiante.
+                            </p>
+                            <p class="card-text"><small class="text-muted">Leer más</small></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- CIERRE CONTENIDO ESTRENOS -->
+
+    <!-- PIE DE PAGINA-->
+    <footer>
+
+        <h4> ¿Más sobre cine? </h4>
+        <p> No te pierdas nada y siguenos en nuestras redes ;) </p>
+        <div class="footer-content">
+            <div class="iconos-redes">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <p> </p>
+        <p>&copy; 2024 Cinetopia. Todos los derechos reservados.</p>
+
+    </footer>
+</body>

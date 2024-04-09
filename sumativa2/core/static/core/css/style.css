@@ -1,0 +1,132 @@
+:root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+
+.container-landing {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 10px;
+
+
+}
+
+.logo-cinetopia {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.3em;
+}
+
+.text-nav {
+    font-family: "Anta", sans-serif;
+    font-size: 1.3em;
+}
+
+.news-cinetopia,
+.container-form-cinetopia,
+.container-news-cinetopia {
+
+    margin: 50px auto;
+
+}
+
+
+
+.title-home {
+    margin-top: 100px;
+
+}
+
+.title-home h1 {
+    font-family: "Anta", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 2.5em;
+
+}
+
+.container-login {
+    max-width: 600px;
+    margin: auto;
+
+}
+
+.boton-menu a,
+.card-news a,
+.card-interview a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #000;
+}
+
+
+.title-form {
+    margin-top: 50px;
+}
+
+
+/* PIE DE PAGINA*/
+.footer-content {
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.iconos-redes a {
+    color: #0785ed;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 0 10px;
+}
+
+
+
+.container-img-news {
+
+    margin: 50px auto;
+
+}
+
+.container-form-cinetopia {
+    border: none;
+    padding: 10px;
+    border-radius: unset;
+
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+    .container-form-cinetopia {
+        border: 3px solid #0d6efd;
+        padding: 50px;
+        border-radius: 25px;
+
+    }
+
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {}

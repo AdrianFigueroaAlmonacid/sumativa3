@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script defer src="{% static 'core/js/main.js' %}"></script>
+    <title>Próximos Estrenos - Godzilla y Kong</title>
+</head>
+
+<body>
+
+    <!-- NAV BAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark  bg-primary">
+        <div class="container-fluid   ">
+            <a class="navbar-brand" href="#"> <span class="logo-cinetopia">Cinetopia</span> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse  container-landing" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html"> <span
+                                class="text-nav">Inicio</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./estreno.html"> <span class="text-nav">Proximos estrenos</span> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./entrevistas.html"> <span class="text-nav">Entrevistas</span> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./streaming.html"> <span class="text-nav">Streaming</span> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./series.html"> <span class="text-nav">Series</span> </a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Escribe tu busqueda"
+                        aria-label="Search">
+                    <button class="btn  btn-success" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV BAR -->
+
+
+
+    <!-- CUERPO ESTRENO 1 -->
+    <div class="card mb-3 container-landing text-start container-news-cinetopia">
+        <div class="card-body">
+            <h3 class="card-title text-center"> <br> Godzilla y Kong: el nuevo imperio. <br> Se estrenará en cines el 29
+                de marzo de 2024.
+                <br> Aquí te contamos mas sobre esta nueva franquicia
+            </h3>
+
+            <div class="container-img-news">
+                <img src=" {% static 'core/img/estreno1.jpg' %}" class="card-img-top" alt="...">
+
+
+            </div>
+
+            <div class="margin-top:3rem">
+                <p class="card-text "> "Godzilla y Kong: El nuevo imperio" profundiza en las historias de estos Titanes
+                    y sus orígenes, así como en los misterios de la Isla Calavera y más allá, mientras descubre la
+                    batalla mítica que ayudó a forjar a estos seres extraordinarios y los unió a la humanidad para
+                    siempre </p>
+
+                <p><strong> Otra batalla más y con ello más destrucción... </strong></p>
+                <p> ¡La batalla épica continúa! La película de Legendary Pictures continúa el explosivo enfrentamiento
+                    de "Godzilla vs. Kong" con una aventura completamente nueva que enfrenta al todopoderoso Kong y al
+                    temible Godzilla contra una colosal amenaza no descubierta escondida dentro de nuestro mundo,
+                    desafiando su propia existencia y la nuestra. </p>
+                <p>¡¡Te dejamos el Tráiler para que le eches un vistazo!!</p>
+                <p><strong> Godzilla y Kong: El nuevo imperio | Tráiler Oficial | Subtitulado </strong></p>
+
+                <iframe width="100%" height="600px" src="https://www.youtube.com/embed/yHeJTh2f4NA" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- CUERPO ESTRENO 1 -->
+
+    <!-- PIE DE PAGINA-->
+    <footer>
+
+        <h4> ¿Más sobre cine? </h4>
+        <p> No te pierdas nada y siguenos en nuestras redes ;) </p>
+        <div class="footer-content">
+            <div class="iconos-redes">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <p> </p>
+        <p>&copy; 2024 Cinetopia. Todos los derechos reservados.</p>
+
+    </footer>
+</body>
+
+</html>
