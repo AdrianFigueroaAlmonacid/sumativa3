@@ -1,4 +1,5 @@
-from django.shortcuts import render
+
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import usuario
 from django.http import HttpResponse, JsonResponse
 
@@ -96,7 +97,36 @@ def procesar_formulario(request):
         nuevo_registro.save()
 
         # Puedes enviar una respuesta de éxito si es necesario
-        return JsonResponse({'message': 'Registro exitoso'})
+        return redirect('listado')
     else:
         # Manejar otros casos como GET u otros métodos HTTP
         return HttpResponse('Método no permitido', status=405)
+
+
+def editar_usuario(request, usuario_id):
+    usuario = get_object_or_404(usuario, pk=usuario_id)
+
+    if request.method == 'POST':
+        # Procesar los datos del formulario de edición
+        usuario.nombre = request.POST.get('nombre')
+        usuario.apellido = request.POST.get('apellido')
+        usuario.nombreUsuario = request.POST.get('nombreUsuario')
+        usuario.email = request.POST.get('email')
+        usuario.password = request.POST.get('password')
+        usuario.save()
+        # Redirigir a la vista principal de modificación de usuarios
+        return redirect('modificar_usuario')
+
+    return render(request, 'modificacion_usuario.html', {'usuario': usuario})
+
+
+def eliminar_usuario(request, usuario_id):
+    usuario = get_object_or_404(usuario, pk=usuario_id)
+
+    if request.method == 'POST':
+        # Eliminar el usuario de la base de datos
+        usuario.delete()
+        # Redirigir a la vista principal de modificación de usuarios
+        return redirect('modificar_usuario')
+
+    return render(request, 'eliminar_usuario.html', {'usuario': usuario})

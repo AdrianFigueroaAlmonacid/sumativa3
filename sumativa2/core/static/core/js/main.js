@@ -16,7 +16,7 @@ const regPass = /^(?=.*[A-Z])(?=.*\d).+$/;
 
 const mensajeExito = () => {
     alertSuccess.classList.remove("d-none");
-    alertSuccess.textContent = "Mensaje enviado con éxito";
+    alertSuccess.textContent = "Registro exitoso";
 };
 
 function limpiarInput() {
