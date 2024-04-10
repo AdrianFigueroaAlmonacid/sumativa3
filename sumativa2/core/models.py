@@ -11,5 +11,5 @@ class usuario(models.Model):
     email = models.CharField(max_length=60, verbose_name='email')
     password = models.CharField(max_length=60, verbose_name='contraseña')
 
-    def _str_(self):
+    def __str__(self):
         return self.nombre

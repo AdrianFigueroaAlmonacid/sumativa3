@@ -37,30 +37,14 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{%url 'estreno'%}"> <span class="text-nav">Proximos
-                                    estrenos</span> </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{%url 'entrevistas'%}"> <span class="text-nav">Entrevistas</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{%url 'streaming'%}"> <span class="text-nav">Streaming</span> </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{%url 'series'%}"> <span class="text-nav">Series</span> </a>
+                            <a class="nav-link" href="{%url 'listado'%}"> <span class="text-nav">listado
+                                    usuarios</span> </a>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Escribe tu busqueda"
-                            aria-label="Search">
-                        <button class="btn  btn-success" type="submit">Buscar</button>
-                    </form>
                 </div>
             </div>
         </nav>
         <!-- NAV BAR -->
-
 
         <!-- FORMULARIO REGISTRO -->
         <div class="title-form">
@@ -68,20 +52,22 @@
             <h2>Formulario de registro</h2>
 
         </div>
-
         <div class="container-landing  container-form-cinetopia">
-            <form action="" method="post" id="form-cinetopia" class="text-start  row g-3">
+            <form action="{% url 'procesar_formulario' %}" method="post" id="form-cinetopia" class="text-start row g-3">
+                {% csrf_token %}
                 <div class="alert alert-success mt-2 d-none" id="alertSuccess"></div>
 
                 <div class="col-md-6">
                     <label for="inputName" class="form-label"> <span class="text-nav">Nombre</span> </label>
-                    <input type="text" required class="form-control" id="inputName" placeholder="Anakin">
+                    <input type="text" required class="form-control" name="inputName" id="inputName"
+                        placeholder="Anakin">
                     <small class="text-danger" id="nombre-error"></small>
                 </div>
 
                 <div class="col-md-6">
                     <label for="inputLastName" class="form-label"> <span class="text-nav">Apellido</span> </label>
-                    <input type="text" required class="form-control" id="inputLastName" placeholder="Skywalker">
+                    <input type="text" required class="form-control" name="inputLastName" id="inputLastName"
+                        placeholder="Skywalker">
                     <small class="text-danger" id="apellido-error"></small>
                 </div>
 
@@ -90,7 +76,8 @@
                     <label class="visually-hidden" for="inputUser"> <span class="text-nav">Usuario</span> </label>
                     <div class="input-group">
                         <div class="input-group-text">@</div>
-                        <input type="text" required class="form-control" id="inputUser" placeholder="Username">
+                        <input type="text" required class="form-control" name="inputUser" id="inputUser"
+                            placeholder="Username">
                         <small class="text-danger" id="usuario-error"></small>
 
                     </div>
@@ -99,7 +86,7 @@
                 <div class="col-md-6">
                     <label for="inputEmail" class="form-label"> <span class="text-nav">Correo electronico</span>
                     </label>
-                    <input type="email" required class="form-control" id="inputEmail">
+                    <input type="email" required class="form-control" name="inputEmail" id="inputEmail">
                     <small class="text-danger" id="email-error"></small>
 
                 </div>
@@ -107,7 +94,7 @@
                 <div class="col-md-6">
                     <label for="inputPassword" class="form-label"> <span class="text-nav">Contraseña</span> </label>
                     <input type="password" minlength="6" maxlength="18" required class="form-control"
-                        id="inputPassword">
+                        name="inputPassword" id="inputPassword">
                     <small class="text-danger" id="password1-error"></small>
 
                 </div>
@@ -121,11 +108,6 @@
 
                 </div>
 
-                <div class="col-md-6">
-                    <label for="inputDate" class="form-label"> <span class="text-nav">Fecha nacimiento</span> </label>
-                    <input type="date" required class="form-control" id="inputDate">
-                </div>
-
                 <div class="col-12 d-flex justify-content-end gap-3">
                     <button id="botonLimpiar" class="btn btn-warning">Limpiar</button>
                     <button type="submit" class="btn btn-success">Enviar</button>
@@ -135,8 +117,6 @@
         <!-- FORMULARIO REGISTRO -->
 
     </div>
-
-
 </body>
 
 </html>
