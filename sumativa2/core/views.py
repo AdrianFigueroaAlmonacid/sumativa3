@@ -65,6 +65,10 @@ def registro(request):
     return render(request, 'core/registro-usuario.html')
 
 
+def modificacion(request):
+    return render(request, 'core/modificacion-usuario.html')
+
+
 def listadoUsuarios(request):
 
     usuarios = usuario.objects.all()
