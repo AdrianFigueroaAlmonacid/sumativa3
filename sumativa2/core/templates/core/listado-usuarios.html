@@ -72,8 +72,18 @@
                     <td>{{usuario.nombreUsuario}}</td>
                     <td>{{usuario.email}}</td>
                     <td>{{usuario.password}}</td>
-                    <td><a href="{%url 'modificacion'%}">Editar</a></td>
-                    <td><a href="{%url 'modificacion'%}">Borrar</a></td>
+                    <td>
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-warning">Editar</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{% url 'eliminar_usuario' usuario.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger">Borrar</button>
+                        </form>
+                    </td>
                 </tr>
             </tbody>
             {% endfor %}

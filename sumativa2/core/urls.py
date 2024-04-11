@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index, estreno, estreno1, estreno2, estreno3, noticia1, noticia2, noticia3, entrevistas, entrevista1, entrevista2, entrevista3, streaming, series, registro, procesar_formulario, listadoUsuarios, modificacion, editar_usuario, eliminar_usuario
+from .views import index, estreno, estreno1, estreno2, estreno3, noticia1, noticia2, noticia3, entrevistas, entrevista1, entrevista2, entrevista3, streaming, series, registro, procesar_formulario, listadoUsuarios, modificacion,  eliminar_usuario
 
 urlpatterns = [
     path('', index, name="index"),
@@ -20,8 +20,8 @@ urlpatterns = [
     path('listado-usuarios/', listadoUsuarios, name="listado"),
     path('procesar-formulario/', procesar_formulario, name='procesar_formulario'),
     path('modificacion-usuario/', modificacion, name="modificacion"),
-    path('modificacion-usuario/<int:usuario_id>/',
-         editar_usuario, name='editar_usuario'),
+    #     path('modificacion-usuario/<int:usuario_id>/',
+    #          editar_usuario, name='editar_usuario'),
     path('eliminar-usuario/<int:usuario_id>/',
          eliminar_usuario, name='eliminar_usuario'),
 

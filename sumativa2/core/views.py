@@ -103,30 +103,30 @@ def procesar_formulario(request):
         return HttpResponse('Método no permitido', status=405)
 
 
-def editar_usuario(request, usuario_id):
-    usuario = get_object_or_404(usuario, pk=usuario_id)
+# def editar_usuario(request, usuario_id):
+#     usuario = get_object_or_404(usuario, pk=usuario_id)
 
-    if request.method == 'POST':
-        # Procesar los datos del formulario de edición
-        usuario.nombre = request.POST.get('nombre')
-        usuario.apellido = request.POST.get('apellido')
-        usuario.nombreUsuario = request.POST.get('nombreUsuario')
-        usuario.email = request.POST.get('email')
-        usuario.password = request.POST.get('password')
-        usuario.save()
-        # Redirigir a la vista principal de modificación de usuarios
-        return redirect('modificar_usuario')
+#     if request.method == 'POST':
+#         # Procesar los datos del formulario de edición
+#         usuario.nombre = request.POST.get('nombre')
+#         usuario.apellido = request.POST.get('apellido')
+#         usuario.nombreUsuario = request.POST.get('nombreUsuario')
+#         usuario.email = request.POST.get('email')
+#         usuario.password = request.POST.get('password')
+#         usuario.save()
+#         # Redirigir a la vista principal de modificación de usuarios
+#         return redirect('modificacion')
 
-    return render(request, 'modificacion_usuario.html', {'usuario': usuario})
+#     return render(request, 'modificacion_usuario.html', {'usuario': usuario})
 
 
 def eliminar_usuario(request, usuario_id):
-    usuario = get_object_or_404(usuario, pk=usuario_id)
+    obj_usuario = get_object_or_404(usuario, pk=usuario_id)
 
     if request.method == 'POST':
         # Eliminar el usuario de la base de datos
-        usuario.delete()
+        obj_usuario.delete()
         # Redirigir a la vista principal de modificación de usuarios
-        return redirect('modificar_usuario')
+        return redirect('listado')
 
-    return render(request, 'eliminar_usuario.html', {'usuario': usuario})
+    return render(request, 'eliminar_usuario.html', {'usuario': obj_usuario})
