@@ -68,7 +68,7 @@
                     <td>{{usuario.email}}</td>
                     <td>{{usuario.password}}</td>
                     <td>
-                        <form action="{% url 'modificacion-usuario'%}" method="post">
+                        <form action="{% url 'modificacion-usuario' %}" method="post">
                             {% csrf_token %}
                             <input type="hidden" name="usuario_id" value="{{ usuario.id }}">
                             <button type="submit" class="btn btn-warning">Editar</button>
