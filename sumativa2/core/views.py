@@ -1,4 +1,3 @@
-
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import usuario
 from django.http import HttpResponse, JsonResponse
@@ -103,23 +102,6 @@ def procesar_formulario(request):
         return HttpResponse('Método no permitido', status=405)
 
 
-# def editar_usuario(request, usuario_id):
-#     usuario = get_object_or_404(usuario, pk=usuario_id)
-
-#     if request.method == 'POST':
-#         # Procesar los datos del formulario de edición
-#         usuario.nombre = request.POST.get('nombre')
-#         usuario.apellido = request.POST.get('apellido')
-#         usuario.nombreUsuario = request.POST.get('nombreUsuario')
-#         usuario.email = request.POST.get('email')
-#         usuario.password = request.POST.get('password')
-#         usuario.save()
-#         # Redirigir a la vista principal de modificación de usuarios
-#         return redirect('modificacion')
-
-#     return render(request, 'modificacion_usuario.html', {'usuario': usuario})
-
-
 def eliminar_usuario(request, usuario_id):
     obj_usuario = get_object_or_404(usuario, pk=usuario_id)
 
@@ -130,3 +112,20 @@ def eliminar_usuario(request, usuario_id):
         return redirect('listado')
 
     return render(request, 'eliminar_usuario.html', {'usuario': obj_usuario})
+
+
+def editar_usuario(request, usuario_id):
+    obj_usuario = get_object_or_404(usuario, pk=usuario_id)
+
+    if request.method == 'POST':
+        # Procesar los datos del formulario de edición
+        obj_usuario.nombre = request.POST.get('inputName')
+        obj_usuario.apellido = request.POST.get('inputLastName')
+        obj_usuario.nombreUsuario = request.POST.get('inputUser')
+        obj_usuario.email = request.POST.get('inputEmail')
+        obj_usuario.password = request.POST.get('inputPassword')
+        obj_usuario.save()
+        # Redirigir a la vista principal de modificación de usuarios
+        return redirect('listado')
+
+    return render(request, 'modificacion-usuario.html', {'usuario': obj_usuario})
