@@ -48,11 +48,12 @@
         <!-- FORMULARIO MODIFICACION -->
         <div class="title-form">
 
-            <h2>Modificacion usuarios</h2>
+            <h2>Modificacion usuario</h2>
 
         </div>
         <div class="container-landing  container-form-cinetopia">
-            <form action="" method="post" id="form-cinetopia" class="text-start row g-3">
+            <form action="{% url 'modificacion_usuario' usuario_id=usuario.id %}" method="post" id="form-cinetopia"
+                class="text-start row g-3">
                 {% csrf_token %}
 
                 <div class="col-md-6">
@@ -87,8 +88,8 @@
 
                 <div class="col-md-6">
                     <label for="inputPassword" class="form-label"> <span class="text-nav">Contraseña</span> </label>
-                    <input type="password" minlength="6" maxlength="18" required class="form-control"
-                        name="inputPassword" id="inputPassword" value="{{usuario.password}}">
+                    <input type="text" minlength="6" maxlength="18" required class="form-control" name="inputPassword"
+                        id="inputPassword" value="{{usuario.password}}">
                 </div>
 
                 <td>

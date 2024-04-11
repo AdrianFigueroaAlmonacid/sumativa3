@@ -106,3 +106,9 @@ def eliminar_usuario(request, usuario_id):
         return redirect('listado')
 
     return render(request, 'eliminar_usuario.html', {'usuario': obj_usuario})
+
+
+def modificacion(request, usuario_id):
+    # usuario = get_object_or_404(usuario, id=usuario_id)
+    usuario_obj = get_object_or_404(usuario, id=usuario_id)
+    return render(request, 'core/modificacion-usuario.html', {'usuario': usuario_obj})

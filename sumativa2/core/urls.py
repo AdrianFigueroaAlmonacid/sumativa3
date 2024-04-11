@@ -21,6 +21,9 @@ urlpatterns = [
     path('eliminar-usuario/<int:usuario_id>/',
          eliminar_usuario, name='eliminar_usuario'),
     path('procesar-formulario/', procesar_formulario, name='procesar_formulario'),
-    path('modificacion-usuario/', modificacion, name='modificacion-usuario'),
+    #     path('modificacion-usuario/', modificacion, name='modificacion-usuario'),
+    path('modificacion-usuario/<int:usuario_id>/',
+         modificacion, name='modificacion_usuario'),
+
 
 ]
