@@ -58,13 +58,13 @@
 
                 <div class="col-md-6">
                     <label for="inputName" class="form-label"> <span class="text-nav">Nombre</span> </label>
-                    <input type="text" required class="form-control" name="inputName" id="inputName"
+                    <input type="text" required class="form-control" name="nombre" id="inputName"
                         value="{{usuario.nombre}}" placeholder="">
                 </div>
 
                 <div class="col-md-6">
                     <label for="inputLastName" class="form-label"> <span class="text-nav">Apellido</span> </label>
-                    <input type="text" required class="form-control" name="inputLastName" id="inputLastName"
+                    <input type="text" required class="form-control" name="apellido" id="inputLastName"
                         value="{{usuario.apellido}}">
                 </div>
 
@@ -73,7 +73,7 @@
                     <label class="visually-hidden" for="inputUser"> <span class="text-nav">Usuario</span> </label>
                     <div class="input-group">
                         <div class="input-group-text">@</div>
-                        <input type="text" required class="form-control" name="inputUser" id="inputUser"
+                        <input type="text" required class="form-control" name="nombreUsuario" id="inputUser"
                             value="{{usuario.nombreUsuario}}">
 
                     </div>
@@ -82,13 +82,13 @@
                 <div class="col-md-6">
                     <label for="inputEmail" class="form-label"> <span class="text-nav">Correo electronico</span>
                     </label>
-                    <input type="email" required class="form-control" name="inputEmail" id="inputEmail"
+                    <input type="email" required class="form-control" name="email" id="inputEmail"
                         value="{{usuario.email}}">
                 </div>
 
                 <div class="col-md-6">
                     <label for="inputPassword" class="form-label"> <span class="text-nav">Contraseña</span> </label>
-                    <input type="text" minlength="6" maxlength="18" required class="form-control" name="inputPassword"
+                    <input type="text" minlength="6" maxlength="18" required class="form-control" name="password"
                         id="inputPassword" value="{{usuario.password}}">
                 </div>
 

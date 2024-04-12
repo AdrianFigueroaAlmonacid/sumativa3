@@ -1,8 +1,9 @@
+from django.shortcuts import redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from .forms import UsuarioForm
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import usuario
 from django.http import HttpResponse
-
-# Create your views here.
 
 
 def index(request):
@@ -109,6 +110,15 @@ def eliminar_usuario(request, usuario_id):
 
 
 def modificacion(request, usuario_id):
-    # usuario = get_object_or_404(usuario, id=usuario_id)
+
     usuario_obj = get_object_or_404(usuario, id=usuario_id)
-    return render(request, 'core/modificacion-usuario.html', {'usuario': usuario_obj})
+
+    if request.method == 'POST':
+        form = UsuarioForm(request.POST, instance=usuario_obj)
+        if form.is_valid():
+            form.save()
+            return redirect('listado')
+    else:
+        form = UsuarioForm(instance=usuario_obj)
+
+    return render(request, 'core/modificacion-usuario.html', {'usuario': usuario_obj, 'form': form})

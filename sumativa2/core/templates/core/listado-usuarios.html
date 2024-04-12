@@ -75,7 +75,6 @@
                     <td>
                         <form action="{% url 'modificacion_usuario' usuario_id=usuario.id %}" method="post">
                             {% csrf_token %}
-                            <!-- <input type="hidden" name="usuario_id" value="{{ usuario.id }}"> -->
                             <button type="submit" class="btn btn-warning">Editar</button>
                         </form>
                     </td>
