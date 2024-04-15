@@ -50,61 +50,15 @@
                         <a class="nav-link" href="{%url 'series'%}"> <span class="text-nav">Series</span> </a>
                     </li>
                     <li>
-
-
+                        <a class="nav-link" href="{%url 'login'%}"> <span class="text-nav">Login</span> </a>
                     </li>
                 </ul>
 
-                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Inicio de sesión
-                </button>
             </div>
         </div>
     </nav>
     <!-- NAV BAR -->
 
-
-    <!-- MODAL LOGIN -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Inicia sesión</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <section class="container-login">
-                        <div class="mb-3 row">
-                            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                            <div class="col-sm-10">
-                                <input type="text" readonly class="form-control-plaintext" id="staticEmail"
-                                    value="email@example.com">
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña</label>
-                            <div class="col-sm-10">
-                                <input type="password" class="form-control" id="inputPassword">
-                            </div>
-                        </div>
-
-
-                    </section>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class=" boton-menu btn btn-warning"> <a class="nav-link"
-                            href="./recuperar-pass.html">Recuperar
-                            contraseña</a> </button>
-                    <button type="button" class=" boton-menu btn btn-info"> <a class="nav-link"
-                            href="{%url 'registro'%}">Registrarse</a>
-                    </button>
-                    <button type="button" class="btn btn-success">Ingresar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- MODAL LOGIN -->
 
     <div class="title-home">
         <h1>Lo mejor del cine y el espectáculo</h1>

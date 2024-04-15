@@ -90,8 +90,39 @@ formularioDgames.addEventListener("submit", (e) => {
     if (camposInvalidos.length === 0) {
         console.log("Formulario enviado con éxito");
         mensajeExito();
-        // Enviar formulario si no hay campos inválidos
         formularioDgames.submit();
     }
 });
 
+
+
+// validar login
+// document.addEventListener('DOMContentLoaded', function () {
+
+//     let messages = document.querySelectorAll('.alert-danger');
+//     if (messages.length > 0) {
+//         var modal = document.getElementById('exampleModal');
+//         if (modal) {
+//             modal.classList.add('show');
+//             modal.style.display = 'block';
+//             modal.setAttribute('aria-modal', 'true');
+//             modal.setAttribute('aria-hidden', 'false');
+//         }
+//     }
+
+//     let form = document.getElementById('loginForm');
+//     if (form) {
+//         form.addEventListener('submit', function (event) {
+//             var messages = document.querySelectorAll('.alert-danger');
+//             if (messages.length > 0) {
+//                 var modal = document.getElementById('exampleModal');
+//                 if (modal) {
+//                     modal.classList.add('show');
+//                     modal.style.display = 'block';
+//                     modal.setAttribute('aria-modal', 'true');
+//                     modal.setAttribute('aria-hidden', 'false');
+//                 }
+//             }
+//         });
+//     }
+// });
