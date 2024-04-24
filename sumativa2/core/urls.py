@@ -1,9 +1,10 @@
 from django.urls import path
-from .views import index, estreno, estreno1, estreno2, estreno3, noticia1, noticia2, noticia3, entrevistas, entrevista1, entrevista2, entrevista3, streaming, series, registro, procesar_formulario, listadoUsuarios, eliminar_usuario, modificacion, login, login_usuario
+from .views import index, estreno, estreno1, estreno2, estreno3, noticia1, noticia2, noticia3, entrevistas, entrevista1, entrevista2, entrevista3, streaming, series, registro, procesar_formulario, listadoUsuarios, eliminar_usuario, modificacion, login, login_usuario, posters
 
 urlpatterns = [
     path('', index, name="index"),
     path('registro/', registro, name="registro"),
+    path('poster-peliculas/', posters, name="posters"),
     path('estreno/', estreno, name="estreno"),
     path('estreno1/', estreno1, name="estreno1"),
     path('estreno2/', estreno2, name="estreno2"),

@@ -7,32 +7,6 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 
-# def loginUsuario(request):
-#     if request.method == 'POST':
-#         username = request.POST.get('user')
-#         password = request.POST.get('pass')
-
-#         # Buscar el usuario en la base de datos
-#         try:
-#             usuario_obj = usuario.objects.get(nombreUsuario=username)
-#         except usuario.DoesNotExist:
-#             messages.error(request, 'El usuario no existe.')
-#             return redirect('index')
-
-#         # Verificar la contraseña
-#         if password == usuario_obj.password:
-#             # La contraseña es correcta, redirigir al listado de usuarios
-#             return redirect('listado')
-#         else:
-#             # La contraseña es incorrecta
-#             messages.error(request, 'Contraseña incorrecta.')
-#             return redirect('index')
-
-#     else:
-#         # Si no es una solicitud POST, renderizar la página de login
-#         return render(request, 'core/index.html')
-
-
 def login_usuario(request):
     if request.method == 'POST':
         username = request.POST.get('user')
@@ -65,6 +39,10 @@ def login(request):
 
 def index(request):
     return render(request, 'core/index.html')
+
+
+def posters(request):
+    return render(request, 'core/posters-peliculas.html')
 
 
 def estreno(request):
