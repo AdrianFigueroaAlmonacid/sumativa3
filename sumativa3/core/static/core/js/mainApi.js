@@ -1,3 +1,6 @@
+
+// script consumo api
+
 async function mostrarPosters(elementoHTML) {
     const options = {
         method: 'GET',

@@ -13,3 +13,14 @@ class usuario(models.Model):
 
     def __str__(self):
         return self.nombre
+
+
+class series(models.Model):
+    titulo = models.CharField(max_length=60, verbose_name='titulo')
+    origen = models.CharField(max_length=60, verbose_name='origen')
+    chapters = models.CharField(
+        max_length=60, verbose_name='capitulos')
+    estreno = models.CharField(max_length=60, verbose_name='estreno')
+
+    def __str__(self):
+        return self.titulo

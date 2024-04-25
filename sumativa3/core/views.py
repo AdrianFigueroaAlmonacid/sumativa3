@@ -1,6 +1,6 @@
 from .forms import UsuarioForm
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import usuario
+from .models import usuario, series
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
@@ -89,8 +89,8 @@ def entrevista3(request):
     return render(request, 'core/entrevista3.html')
 
 
-def series(request):
-    return render(request, 'core/series.html')
+def seriesPrincipal(request):
+    return render(request, 'core/seriesPrincipal.html')
 
 
 def streaming(request):
@@ -99,6 +99,10 @@ def streaming(request):
 
 def registro(request):
     return render(request, 'core/registro-usuario.html')
+
+
+def agregarSeries(request):
+    return render(request, 'core/crud-series.html')
 
 
 def modificacion(request):
@@ -157,3 +161,23 @@ def modificacion(request, usuario_id):
         form = UsuarioForm(instance=usuario_obj)
 
     return render(request, 'core/modificacion-usuario.html', {'usuario': usuario_obj, 'form': form})
+
+
+def addSeries(request):
+    if request.method == 'POST':
+        titulo = request.POST.get('inputTitle')
+        origen = request.POST.get('inputOrigin')
+        estreno = request.POST.get('inputYear')
+        chapters = request.POST.get('inputChapter')
+
+        nuevo_registro = series(
+            titulo=titulo, origen=origen, chapters=chapters, estreno=estreno)
+
+        nuevo_registro.save()
+
+        nuevo_registro = series(
+            titulo=titulo, origen=origen, chapters=chapters, estreno=estreno)
+
+        return redirect('listado')
+    else:
+        return HttpResponse('Método no permitido', status=405)
