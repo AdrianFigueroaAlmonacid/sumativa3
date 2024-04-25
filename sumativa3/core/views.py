@@ -178,6 +178,16 @@ def addSeries(request):
         nuevo_registro = series(
             titulo=titulo, origen=origen, chapters=chapters, estreno=estreno)
 
-        return redirect('listado')
+        return redirect('listadoSeries')
     else:
         return HttpResponse('Método no permitido', status=405)
+
+
+def listadoSeries(request):
+
+    serie = series.objects.all()
+    datos = {
+
+        'series': serie
+    }
+    return render(request, 'core/listado-series.html', datos)
