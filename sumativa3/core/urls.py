@@ -17,7 +17,7 @@ urlpatterns = [
     path('entrevista2/', entrevista2, name="entrevista2"),
     path('entrevista3/', entrevista3, name="entrevista3"),
     path('streaming/', streaming, name="streaming"),
-    path('series/', seriesPrincipal, name="series"),
+    path('seriesPrincipal/', seriesPrincipal, name="seriesPrincipal"),
     path('crud-series/', agregarSeries, name="agregarSeries"),
     path('listado-usuarios/', listadoUsuarios, name="listado"),
     path('eliminar-usuario/<int:usuario_id>/',
