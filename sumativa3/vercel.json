@@ -2,7 +2,7 @@
 
     "builds": [{
 
-        "src": "sumativa3/wsgi.py",
+        "src": "sumativa/wsgi.py",
 
         "use": "@vercel/python",
 
@@ -16,7 +16,7 @@
 
             "src": "/(.*)",
 
-            "dest": "sumativa3/wsgi.py"
+            "dest": "sumativa/wsgi.py"
 
         }
 
