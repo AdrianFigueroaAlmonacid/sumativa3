@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-# import os
+import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,15 +22,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-2dx6&ai5pj2z+!j@3z#*v%8jdls=2o0y_muex3i^bzdh$+3a$+'
+SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = []
 
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
-# Application definition
+    # Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -51,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.whitenoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'sumativa.urls'
@@ -84,20 +89,25 @@ WSGI_APPLICATION = 'sumativa.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.oracle',
+#         'NAME': 'xe',
+#         'USER': 'prograWeb',
+#         'PASSWORD': 'progra_web2050@A1234',
+#         'HOST': 'localhost',
+#         'PORT': '1521',
+#         'TEST': {
+#             'USER': 'default_test',
+#             'TBLSPACE': 'default_test_tbls',
+#             'TBLSPACE_TMP': 'default_test_tbls_tmp'
+#         }
+#     }
+# }
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.oracle',
-        'NAME': 'xe',
-        'USER': 'prograWeb',
-        'PASSWORD': 'progra_web2050@A1234',
-        'HOST': 'localhost',
-        'PORT': '1521',
-        'TEST': {
-            'USER': 'default_test',
-            'TBLSPACE': 'default_test_tbls',
-            'TBLSPACE_TMP': 'default_test_tbls_tmp'
-        }
-    }
+    'default': dj_database_url.config()
 }
 
 
@@ -136,6 +146,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, 'formativa3/static'))
 
 # Default primary key field type
